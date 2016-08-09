@@ -12,3 +12,5 @@ node_js:
   - 4
 script:
   - npm run validate
+after_success:
+  - npm run report-coverage
