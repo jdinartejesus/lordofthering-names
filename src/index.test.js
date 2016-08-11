@@ -1,35 +1,20 @@
 import {expect} from 'chai';
 import lordOfTheRing from './index';
 
-describe('lordOfTheRing-names', function() {
-  describe('all', function() {
-    it('should be an array of strings', function() {
-      expect(lordOfTheRing.all).to.satisfy(isArrayOfStrings);
+describe('lordOfTheRing', () => {
+  it('should have a list of all available names', () => {
+    expect(lordOfTheRing.all).to.satisfy(isArrayOfStrings)
+  })
 
-      function isArrayOfStrings(array) {
-        return array.every(function(item) {
-          return typeof item === 'string';
-        });
-      }
-    });
+  it('should allow me to get a random name from the list', () => {
+    expect(lordOfTheRing.random()).to.satisfy(isIncludedIn(lordOfTheRing.all))
+  })
+})
 
-    it('should contain `Adrahil`', function() {
-      expect(lordOfTheRing.all).to.include('Adrahil');
-    });
-  });
+function isArrayOfStrings(array) {
+  return array.every(i => typeof i === 'string')
+}
 
-  describe('random', function() {
-    it('should return a random item from the lordOfTheRing.all', function() {
-      var randomItem = lordOfTheRing.random();
-      expect(lordOfTheRing.all).to.include(randomItem);
-    });
-
-    it('should return an array of random items if passed a number', function() {
-      var randomItems = lordOfTheRing.random(3);
-      expect(randomItems).to.have.length(3);
-      randomItems.forEach(function(item) {
-        expect(lordOfTheRing.all).to.include(item);
-      });
-    });
-  });
-});
+function isIncludedIn(array) {
+  return item => array.includes(item)
+}

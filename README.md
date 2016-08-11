@@ -4,12 +4,29 @@
 [![version](https://img.shields.io/npm/v/lordofthering-names.svg?style=flat-square)](http://npm.im/lordofthering-names)
 [![MIT License](https://img.shields.io/npm/l/lordofthering-names.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
-  Generator to return random names of lord of the rings.
+  ![Image of Gandalf](http://www.reactiongifs.com/wp-content/uploads/2013/11/adventure.gif)
 
-## Help me!
+## Generator to return random names of lord of the rings.
 
-  `$ npm run build`
+Project develop during a workshop on http://frontendmasters.com/ called
+`Writing an Open Source JavaScript Library` with @kentcdodds.
 
-## Try out!
 
-  `$ npm run validate`
+Example here made by @voronianski: [here](https://esnextb.in/?gist=2abcda2f469def2275ae8a6b679894c8&exec=true)
+
+
+### Help me!
+
+```
+$ git clone git@github.com:USERNAME/lordofthering-names.git
+$ cd lordofthering-names
+$ npm run develop
+```
+
+### Try out!
+
+```
+$ npm install lordofthering-names
+$ node
+> require('lordofthering-names').random()
+```
